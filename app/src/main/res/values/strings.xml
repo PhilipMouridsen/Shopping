@@ -2,5 +2,5 @@
     <string name="button">LIST ALL ITEMS</string>
     <string name="add_button">ADD NEW ITEM</string>
     <string name="add_toast">Item added!</string>
-    <string name="none_toast">Please write something!</string>
+    <string name="none_toast">Please fill out both fields :)</string>
 </resources>

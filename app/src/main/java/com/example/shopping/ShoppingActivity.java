@@ -48,7 +48,7 @@ public class ShoppingActivity extends AppCompatActivity {
                     Toast.makeText(ShoppingActivity.this, R.string.add_toast, Toast.LENGTH_SHORT).show();
                     what.getText().clear();
                     where.getText().clear();
-                } else {
+                } else if (what.getText().toString().trim().length() == 0 || where.getText().toString().trim().length() == 0) {
                     Toast.makeText(ShoppingActivity.this, R.string.none_toast, Toast.LENGTH_SHORT).show();
                 }
             }

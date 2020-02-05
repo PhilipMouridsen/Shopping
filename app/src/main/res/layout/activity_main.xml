@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WHAT?" />
+            android:text="What item?" />
 
         <EditText
             android:id="@+id/what_edit"
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WHERE?" />
+            android:text="Where?" />
 
         <EditText
             android:id="@+id/where_edit"
