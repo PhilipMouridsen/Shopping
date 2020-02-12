@@ -5,8 +5,8 @@ public class Item {
     private String mWhere = null;
 
     public Item(String what, String where) {
-        mWhat = what;
-        mWhere = where;
+        mWhat = what.toLowerCase().trim();
+        mWhere = where.toLowerCase().trim();
     }
 
     @Override

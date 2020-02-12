@@ -2,6 +2,7 @@ package com.example.shopping;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -14,19 +15,17 @@ public class ShoppingActivity extends AppCompatActivity {
     // GUI variables
     private Button listItems;
     private Button addNewItem;
-    private TextView items;
     private EditText what;
     private EditText where;
     // Model: Database of items
-    private ItemsDB itemsDB;
+    private static ItemsDB itemsDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        itemsDB = new ItemsDB();
+        itemsDB = ItemsDB.get(this);
 
-        items = findViewById(R.id.items);
         what = findViewById(R.id.what_edit);
         where = findViewById(R.id.where_edit);
 
@@ -35,8 +34,8 @@ public class ShoppingActivity extends AppCompatActivity {
         listItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                items.setText("Shopping List:" + itemsDB.listItems());
+                Intent intent = new Intent(ShoppingActivity.this, ListActivity.class);
+                startActivity(intent);
             }
         });
         addNewItem = findViewById(R.id.Add_Button);
