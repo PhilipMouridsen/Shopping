@@ -40,6 +40,8 @@
     <!-- Button to list all items-->
     <Button
         android:id="@+id/Add_Button"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_button" />

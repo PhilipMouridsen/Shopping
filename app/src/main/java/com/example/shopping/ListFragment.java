@@ -14,9 +14,10 @@ import androidx.fragment.app.Fragment;
 public class ListFragment extends Fragment {
 
     private TextView items;
-    private static ItemsDB itemsDB;
     private Button delete;
     private Button back_button;
+
+    private static ItemsDB itemsDB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

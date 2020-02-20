@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ListActivity">
+    tools:context=".DeleteActivity">
 
     <TextView
         android:id="@+id/items"
@@ -13,13 +13,24 @@
         android:padding="24dp"
         tools:text="List" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_text" />
+
+    <EditText
+        android:id="@+id/delete_text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
     <Button
         android:id="@+id/delete"
         android:background="@android:color/holo_red_light"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/delete_an_item" />
+        android:text="@string/delete" />
 
     <Button
         android:id="@+id/back_button"

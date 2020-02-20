@@ -14,10 +14,10 @@ import androidx.fragment.app.Fragment;
 public class UIFragment extends Fragment {
 
     // GUI variables
-    private Button listItems;
-    private Button addNewItem;
     private EditText what;
     private EditText where;
+    private Button listItems;
+    private Button addNewItem;
     // Model: Database of items
     private static ItemsDB itemsDB;
 

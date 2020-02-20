@@ -4,6 +4,9 @@
     <string name="add_toast">Item added!</string>
     <string name="none_toast">Please fill out both fields :)</string>
     <string name="delete">Delete</string>
+    <string name="delete_an_item">Delete an item</string>
     <string name="delete_text">What item do you wish to delete?:</string>
     <string name="back_button">Back</string>
+    <string name="no_delete_toast">This item is not on the list</string>
+    <string name="delete_toast">Item is deleted</string>
 </resources>
