@@ -33,11 +33,11 @@ public class ItemsDB {
 
     public void fillItemsDB(String what, String where) {
         itemsDB.add(new Item(what, where));
-        itemsDB.add(new Item("coffee", "Irma"));
-        itemsDB.add(new Item("carrots", "Netto"));
-        itemsDB.add(new Item("milk", "Netto"));
-        itemsDB.add(new Item("bread", "bakery"));
-        itemsDB.add(new Item("butter", "Irma"));
+//        itemsDB.add(new Item("coffee", "Irma"));
+//        itemsDB.add(new Item("carrots", "Netto"));
+//        itemsDB.add(new Item("milk", "Netto"));
+//        itemsDB.add(new Item("bread", "bakery"));
+//        itemsDB.add(new Item("butter", "Irma"));
     }
 
     public void deleteItem(String what) {
@@ -47,5 +47,9 @@ public class ItemsDB {
                 break;
             }
         }
+    }
+
+    public int getSize() {
+        return itemsDB.size();
     }
 }

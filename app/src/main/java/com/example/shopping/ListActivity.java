@@ -1,6 +1,9 @@
 package com.example.shopping;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.ListFragment;
 
 
 import android.content.Intent;
@@ -11,39 +14,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ListActivity extends AppCompatActivity {
-
-    private TextView items;
-    private static ItemsDB itemsDB;
-    private Button delete;
-    private Button back_button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        itemsDB = ItemsDB.get(this);
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-        items = findViewById(R.id.items);
-        items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        items.setText("Shopping List:" + itemsDB.listItems());
-
-        delete = findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ListActivity.this, DeleteActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        back_button = findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ListActivity.this, ShoppingActivity.class);
-                startActivity(intent);
-            }
-        });
+        if (fragment == null) {
+            fragment = new ListFragment();
+            fm.beginTransaction().add(R.id.fragment_container, fragment)
+                    .commit();
+        }
     }
 }

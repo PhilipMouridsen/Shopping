@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="ShoppingV2"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/shopping_launcher"
+        android:label="Shopping"
+        android:roundIcon="@mipmap/shopping_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DeleteActivity"></activity>
