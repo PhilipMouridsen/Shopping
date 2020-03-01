@@ -1,5 +1,6 @@
 package com.example.shopping;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,9 +13,13 @@ import static org.junit.Assert.*;
 public class ItemUnitTest {
     Item t;
 
+    @Before
+    public void setup(){
+        t = new Item("aa", "bb");
+    }
+
     @Test
     public void itemsDBTest(){
-        t = new Item("aa", "bb");
         assertEquals(t.getWhat(), "aa");
         assertEquals(t.getWhere(), "bb");
     }

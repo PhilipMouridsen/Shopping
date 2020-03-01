@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class ListFragment extends Fragment {
+import java.util.Observable;
+import java.util.Observer;
+
+public class ListFragment extends Fragment implements Observer {
 
     private TextView items;
     private Button delete;
@@ -23,6 +26,11 @@ public class ListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         itemsDB = ItemsDB.get(getActivity());
+        itemsDB.addObserver(this);
+    }
+
+    public void update(Observable observable, Object data) {
+        items.setText("Shopping List"+itemsDB.listItems());
     }
 
     @Override

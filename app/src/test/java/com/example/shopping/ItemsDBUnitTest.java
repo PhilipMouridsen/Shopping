@@ -2,6 +2,8 @@ package com.example.shopping;
 
 import android.content.Context;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,12 +13,18 @@ public class ItemsDBUnitTest {
     private static ItemsDB IDB;
     private Context context;
 
-    public ItemsDBUnitTest() {
+    @Before
+    public void setup(){
         context = null;
         IDB = ItemsDB.get(context);
         IDB.fillItemsDB("mad", "butik");
         IDB.fillItemsDB("Bananer", "Netto");
         IDB.fillItemsDB("Peanut Butter (meget vigtigt)", "Wherever");
+    }
+
+    @After
+    public void cleanUp(){
+        IDB.emptyList();
     }
 
     @Test

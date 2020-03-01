@@ -13,11 +13,11 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        Fragment fragment = fm.findFragmentById(R.id.fragment_list);
 
         if (fragment == null) {
             fragment = new ListFragment();
-            fm.beginTransaction().add(R.id.fragment_container, fragment)
+            fm.beginTransaction().add(R.id.fragment_list, fragment)
                     .commit();
         }
     }

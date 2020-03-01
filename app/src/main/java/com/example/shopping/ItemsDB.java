@@ -4,8 +4,9 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-public class ItemsDB {
+public class ItemsDB extends Observable {
     //Field variables
     private static ItemsDB sItemsDB;
     private List<Item> itemsDB;
@@ -33,6 +34,8 @@ public class ItemsDB {
 
     public void fillItemsDB(String what, String where) {
         itemsDB.add(new Item(what, where));
+        this.setChanged();
+        notifyObservers();
     }
 
     public void deleteItem(String what) {
@@ -42,9 +45,15 @@ public class ItemsDB {
                 break;
             }
         }
+        this.setChanged();
+        notifyObservers();
     }
 
     public int getSize() {
         return itemsDB.size();
+    }
+
+    public void emptyList(){
+        itemsDB.clear();
     }
 }

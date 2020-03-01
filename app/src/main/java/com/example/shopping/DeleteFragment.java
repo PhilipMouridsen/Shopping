@@ -1,6 +1,7 @@
 package com.example.shopping;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,8 +42,13 @@ public class DeleteFragment extends Fragment {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ListActivity.class);
-                startActivity(intent);
+                if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    Intent intent = new Intent(getActivity(), ShoppingActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(getActivity(), ListActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -56,8 +62,13 @@ public class DeleteFragment extends Fragment {
                     Toast.makeText(getActivity(), R.string.no_delete_toast, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getActivity(), R.string.delete_toast, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), ListActivity.class);
-                    startActivity(intent);
+                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        Intent intent = new Intent(getActivity(), ShoppingActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getActivity(), ListActivity.class);
+                        startActivity(intent);
+                    }
                 }
 
             }

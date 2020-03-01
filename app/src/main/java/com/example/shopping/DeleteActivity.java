@@ -14,11 +14,11 @@ public class DeleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_delete);
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        Fragment fragment = fm.findFragmentById(R.id.fragment_delete);
 
         if (fragment == null) {
             fragment = new DeleteFragment();
-            fm.beginTransaction().add(R.id.fragment_container, fragment)
+            fm.beginTransaction().add(R.id.fragment_delete, fragment)
                     .commit();
         }
     }
