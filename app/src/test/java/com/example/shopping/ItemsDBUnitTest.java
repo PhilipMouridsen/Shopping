@@ -14,7 +14,7 @@ public class ItemsDBUnitTest {
     private Context context;
 
     @Before
-    public void setup(){
+    public void setup() {
         context = null;
         IDB = ItemsDB.get(context);
         IDB.fillItemsDB("mad", "butik");
@@ -23,7 +23,7 @@ public class ItemsDBUnitTest {
     }
 
     @After
-    public void cleanUp(){
+    public void cleanUp() {
         IDB.emptyList();
     }
 
@@ -31,7 +31,10 @@ public class ItemsDBUnitTest {
     public void deleteItemTest() {
         IDB.deleteItem("mad");
         assertEquals(IDB.listItems(),
-                "\n Buy bananer in: netto" +
+                "\n Buy banan in: netto" +
+                        "\n Buy æble in: netto" +
+                        "\n Buy peanut butter in: netto" +
+                        "\n Buy bananer in: netto" +
                         "\n Buy peanut butter (meget vigtigt) in: wherever");
     }
 }

@@ -17,14 +17,18 @@ public class ItemsDB extends Observable {
     }
 
     //Methods
-    public static ItemsDB get(Context context) {
+    public static synchronized ItemsDB get(Context context) {
         if (sItemsDB == null) {
             sItemsDB = new ItemsDB(context);
+            sItemsDB.fillItemsDB("banan", "netto");
+            sItemsDB.fillItemsDB("æble", "netto");
+            sItemsDB.fillItemsDB("Peanut Butter", "netto");
+
         }
         return sItemsDB;
     }
 
-    public String listItems() {
+    public synchronized String listItems() {
         String r = "";
         for (int i = 0; i < itemsDB.size(); i++) {
             r = r + "\n Buy " + itemsDB.get(i).toString();
@@ -32,13 +36,17 @@ public class ItemsDB extends Observable {
         return r;
     }
 
-    public void fillItemsDB(String what, String where) {
+    public synchronized void fillItemsDB(String what, String where) {
         itemsDB.add(new Item(what, where));
         this.setChanged();
         notifyObservers();
     }
 
-    public void deleteItem(String what) {
+    public synchronized List<Item> getItemsDB() {
+        return itemsDB;
+    }
+
+    public synchronized void deleteItem(String what) {
         for (Item item : itemsDB) {
             if (item.getWhat().equals(what.toLowerCase().trim())) {
                 itemsDB.remove(item);
@@ -49,11 +57,11 @@ public class ItemsDB extends Observable {
         notifyObservers();
     }
 
-    public int getSize() {
+    public synchronized int getSize() {
         return itemsDB.size();
     }
 
-    public void emptyList(){
+    public synchronized void emptyList(){
         itemsDB.clear();
     }
 }
