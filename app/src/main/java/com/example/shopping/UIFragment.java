@@ -12,9 +12,6 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import java.util.Observable;
-import java.util.Observer;
-
 public class UIFragment extends Fragment {
 
     // GUI variables
@@ -52,7 +49,7 @@ public class UIFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (what.getText().toString().trim().length() > 0 && where.getText().toString().trim().length() > 0) {
-                    itemsDB.fillItemsDB(what.getText().toString(), where.getText().toString());
+                    itemsDB.addItem(what.getText().toString(), where.getText().toString());
                     Toast.makeText(getActivity(), R.string.add_toast, Toast.LENGTH_SHORT).show();
                     what.getText().clear();
                     where.getText().clear();

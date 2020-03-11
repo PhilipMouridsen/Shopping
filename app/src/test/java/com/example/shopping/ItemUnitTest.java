@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ItemUnitTest {
-    Item t;
+/*    Item t;
 
     @Before
     public void setup(){
@@ -22,5 +22,5 @@ public class ItemUnitTest {
     public void itemsDBTest(){
         assertEquals(t.getWhat(), "aa");
         assertEquals(t.getWhere(), "bb");
-    }
+    }*/
 }

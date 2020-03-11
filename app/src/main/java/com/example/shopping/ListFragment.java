@@ -1,7 +1,5 @@
 package com.example.shopping;
 
-import android.content.Intent;
-// import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +17,7 @@ import java.util.Observer;
 
 public class ListFragment extends Fragment implements Observer {
 
-    //    private TextView items;
     private Button delete;
-    //private Button back_button;
     private RecyclerView mShoppingRecyclerView;
     private ItemAdapter mAdapter;
 
@@ -42,30 +38,8 @@ public class ListFragment extends Fragment implements Observer {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_list, container, false);
 
-        /*items = v.findViewById(R.id.items);
-        items.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        items.setText("Shopping List:" + itemsDB.listItems()); */
-
         mShoppingRecyclerView = (RecyclerView) v.findViewById(R.id.shopping_recycler_view);
         mShoppingRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
-/*        back_button = v.findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ShoppingActivity.class);
-                startActivity(intent);
-            }
-        });
-        delete = v.findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DeleteActivity.class);
-                startActivity(intent);
-            }
-        }); */
 
         updateUI();
 
